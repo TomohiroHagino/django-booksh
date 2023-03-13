@@ -1,3 +1,4 @@
+# books/models.py
 import uuid
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -15,6 +16,9 @@ class Book(models.Model):
     cover = models.ImageField(upload_to="covers/", blank=True)
 
     class Meta:
+        indexes = [
+            models.Index(fields=['id'], name='id_index'),
+        ]
         permissions = [
             ("special_status", "Can read all books"),
         ]
