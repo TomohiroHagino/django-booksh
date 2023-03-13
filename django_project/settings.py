@@ -29,7 +29,6 @@ SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", "django-booksh.fly.dev"]
 CSRF_TRUSTED_ORIGINS = ["https://django-booksh.fly.dev"]
@@ -118,7 +117,6 @@ DATABASES = {
 # DATABASES = {
 #     "default": env.dj_db_url("DATABASE_URL", default="sqlite:///db.sqlite3"),
 # }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
