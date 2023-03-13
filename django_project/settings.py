@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
-# DEBUG=True
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     # Local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
+    "books.apps.BooksConfig",
 ]
 
 # django-crispy-forms
@@ -176,7 +177,6 @@ AUTHENTICATION_BACKENDS = (
 )
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
 LOGIN_REDIRECT_URL = "home"
 # LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_REDIRECT = "home"
