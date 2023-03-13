@@ -25,8 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Githubにあげるときだけ書き直す
+
 SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
+# DEBUG=True
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -172,7 +174,9 @@ AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 )
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
 LOGIN_REDIRECT_URL = "home"
 # LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_REDIRECT = "home"
